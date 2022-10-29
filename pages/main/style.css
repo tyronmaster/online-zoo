@@ -167,6 +167,8 @@ textarea::-webkit-input-placeholder {
   height: 80px;
   width: 100%;
   background: var(--color-black);
+  position: relative;
+  z-index: 10;
 }
 
 .header__inner {
@@ -203,6 +205,101 @@ textarea::-webkit-input-placeholder {
   white-space: nowrap;
 }
 .menu__link {
+}
+
+.main {
+  margin-top: -80px;
+  flex: 1 1 auto;
+}
+.mainframe {
+  height: 780px;
+  width: 100%;
+  background: center / cover url(../../assets/images/giant-panda.jpg) no-repeat;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 100px;
+}
+.mainframe__inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  /* padding-top: 165px; */
+  width: 100%;
+}
+.mainframe__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainframe__title {
+  font-family: "Roboto", sans-serif;
+  width: 500.31px;
+  font-weight: 700;
+  font-size: 106.5px;
+  line-height: 75%;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-white);
+  position: relative;
+  margin-bottom: 61px;
+}
+.mainframe__title span {
+  color: var(--color-yellow);
+}
+.mainframe__title:after {
+  content: "";
+  position: absolute;
+  top: -4.5vw;
+  left: -4.5vw;
+  /* top: -73px;
+  left: -73px; */
+  width: 29vw;
+  height: 29vw;
+  /* width: 465px;
+  height: 465px; */
+  background: var(--color-orange-gradient);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.button {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-white);
+  padding: 16px 5px;
+  width: 298px;
+  height: 54px;
+  background: var(--color-orange-gradient), var(--color-orange);
+  transition: 0.5s ease-in-out;
+  z-index: 15;
+}
+.button:hover {
+  background: var(--color-orange);
+  transition: 1s ease-in-out;
+}
+.round {
+  border-radius: 25px;
+}
+.square {
+  border-radius: 5px;
+}
+.button.active {
+  background: var(--color-green);
+}
+.button:disabled {
+  background: var(--color-gray);
 }
 
 @media screen and (max-width: 800px) {
