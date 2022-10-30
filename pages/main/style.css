@@ -582,7 +582,7 @@ textarea::-webkit-input-placeholder {
   line-height: 120%;
   color: var(--color-gray);
   padding-bottom: 40px;
-  letter-spacing: -0.5px;
+  /* letter-spacing: -0.5px; */
 }
 .feed__text {
   font-family: "Roboto";
@@ -592,6 +592,9 @@ textarea::-webkit-input-placeholder {
   line-height: 130%;
   color: var(--color-gray);
   letter-spacing: normal;
+}
+.feed__text:last-child {
+  width: 86%;
 }
 .feed__link {
   display: inline-block;
@@ -662,6 +665,7 @@ textarea::-webkit-input-placeholder {
   padding-top: 140px;
   padding-bottom: 180px;
   position: relative;
+  overflow: hidden;
 }
 .testimonials::after {
   content: "";
@@ -706,7 +710,7 @@ textarea::-webkit-input-placeholder {
   /* overflow: hidden;
   flex-wrap: wrap; */
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   transform: translateX(0);
   /* transform: translateX(calc(var(--carousel-gap) / 2)); */
   transition: transform 0.5s ease-in-out;
@@ -723,37 +727,6 @@ textarea::-webkit-input-placeholder {
   /* transform: scale(1); */
   transition: 0.5s ease-in-out;
 }
-
-/* .testimonials.active::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(253, 253, 255, 0.9);
-  z-index: 0;
-}
-.carousel__item.active {
-  position: absolute;
-  width: 267px;
-  height: 391px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.5s ease-in-out;
-  z-index: 100;
-}
-.carousel__item.active::before {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  margin: 15px;
-  background: url(../../assets/icons/x_icon.png);
-  top: 0;
-  left: 0;
-} */
 
 .item__header {
   display: flex;
@@ -1048,9 +1021,10 @@ input[type="range"].carousel__navigation:active::-ms-track {
   align-items: flex-start;
 }
 .footer .header__logo {
-  margin-bottom: 70px;
+  margin-bottom: 64px;
   flex: 0 0 68.3%;
   order: 1;
+  padding-right: 60%;
 }
 .footer__form {
   /* flex: 0 0 50%; */
@@ -1131,7 +1105,7 @@ input[type="range"].carousel__navigation:active::-ms-track {
   order: 5;
 }
 .footer .menu__list {
-  padding-left: 122px;
+  padding-left: 60px;
 }
 .menu__item:last-child {
   padding-right: 0;
@@ -1140,7 +1114,7 @@ input[type="range"].carousel__navigation:active::-ms-track {
 .footer__copyright {
   order: 6;
   align-self: flex-end;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 .designer {
   font-family: "Roboto";
