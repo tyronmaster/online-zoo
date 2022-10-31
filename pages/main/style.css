@@ -435,9 +435,37 @@ textarea::-webkit-input-placeholder {
   height: 366px;
   border-radius: 5px;
   overflow: hidden;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+.slider__picture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
 }
 .slider__item:hover .slider__image {
   transform: scale(1.1);
+  transition: 0.5s ease-in-out;
+}
+.slider__item:hover .slider__picture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+}
+.slider__item:hover .slider__content {
+  transform: translateY(-50px);
   transition: 0.5s ease-in-out;
 }
 .slider__image {
@@ -447,11 +475,14 @@ textarea::-webkit-input-placeholder {
   transition: 0.5s ease-in-out;
 }
 .slider__content {
+  position: relative;
+  z-index: 10;
   padding: 8px 8px 14px 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  transition: 0.5s ease-in-out;
 }
 .slider__title {
   font-family: "Roboto";
@@ -1148,7 +1179,7 @@ input[type="range"].carousel__navigation:active::-ms-track {
     margin: 0;
     z-index: 2;
     transition: 0.5s ease-in-out;
-        /* backdrop-filter: blur(25px) sepia(10);
+    /* backdrop-filter: blur(25px) sepia(10);
     -webkit-backdrop-filter: blur(25px) sepia(10); */
   }
   .header__inner.active::before {
