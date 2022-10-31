@@ -209,18 +209,10 @@ height: 52px; */
   fill: var(--color-green);
   transition: 0.5s ease-in-out;
 }
-/* .header__logo {
-  padding-right: 5px;
+.header__logo,
+.header__logo:hover {
+  background: none;
 }
-.header__logo:hover .st1:nth-child(1) {
-  fill: var(--color-green);
-}
-.logo__link {
-}
-.logo__image {
-  width: 82px;
-  height: 52px;
-} */
 .navigation {
   display: flex;
   flex-direction: row;
@@ -698,14 +690,6 @@ height: 52px; */
   left: 13%;
   width: 14.3%;
 }
-/* .logo__icon path {
-  fill: var(--color-white);
-  transition: .5s ease-in-out;
-}
-.header__logo:hover  .logo__icon path {
-  fill: var(--color-green);
-  transition: .5s ease-in-out;
-} */
 
 .footer__form {
   order: 2;
