@@ -279,6 +279,7 @@ textarea::-webkit-input-placeholder {
   z-index: 15;
 }
 .button:hover {
+  color: var(--color-white);
   background: var(--color-orange);
   transition: 1s ease-in-out;
 }
@@ -1045,6 +1046,7 @@ input[type="range"].carousel__navigation:active::-ms-track {
 }
 .form__input:focus ~ .form__button {
   border: 1px solid #4b9200;
+  color: #4b9200;
 }
 .footer__form:invalid .form__button {
   border: 1px solid var(--color-red);
@@ -1054,7 +1056,8 @@ input[type="range"].carousel__navigation:active::-ms-track {
   height: 42px;
   padding: 10px 39px;
   background: #f1f3f2;
-  border: 1px solid #4b9200;
+  color: var(--color-black-blue);
+  border: 1px solid var(--color-black-blue);
   border-radius: 5px;
 
   font-family: "Roboto";
@@ -1062,7 +1065,6 @@ input[type="range"].carousel__navigation:active::-ms-track {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #4b9200;
   margin-left: 10px;
   cursor: pointer;
 }
