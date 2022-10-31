@@ -676,9 +676,9 @@ height: 52px; */
 }
 .footer .header__logo {
   margin-bottom: 64px;
-  flex: 0 0 68.3%;
+  /* flex: 0 0 68.3%; */
   order: 1;
-  padding-right: 60%;
+  /* padding-right: 60%; */
   position: relative;
   cursor: pointer;
 }
