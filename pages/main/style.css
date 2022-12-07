@@ -447,6 +447,7 @@ height: 52px; */
   flex-wrap: wrap;
   row-gap: 20px;
   column-gap: 30px;
+  transition: opacity .5s ease-in-out;
 }
 .slider__item {
   width: 366px;
@@ -458,6 +459,7 @@ height: 52px; */
   overflow: hidden;
   transition: order 0.5s;
   will-change: order;
+  transition: opacity .5s ease-in-out;
 }
 .slider__picture {
   width: 366px;
@@ -693,6 +695,7 @@ height: 52px; */
   width: 247px;
   height: 408px;
   background: no-repeat url(../../assets/images/leav_foto.png);
+  z-index: -1;
 }
 .testimonials__inner {
   text-align: center;
@@ -1529,10 +1532,10 @@ width: 60%;
     padding-left: 10px;
     font-weight: 500;
   }
-  .header__inner.active .menu__link.active{
+  .header__inner.active .menu__link.active {
     color: var(--color-orange);
   }
-  .header__inner.active .menu__link:hover{
+  .header__inner.active .menu__link:hover {
     color: var(--color-orange);
   }
   .header .menu__list,
@@ -1597,14 +1600,14 @@ width: 60%;
     padding: 3px 4px;
     border-radius: 2px;
     border: 1.18841px solid var(--color-orange);
-}
+  }
   .header__inner.active .logo__icon {
     top: 50%;
     left: 21%;
-}
-.header__inner.active .logo__icon path{
-  fill: var(--color-orange);
-}
+  }
+  .header__inner.active .logo__icon path {
+    fill: var(--color-orange);
+  }
   .header__inner.active .header__logo {
     padding-top: 10px;
     padding-left: 10px;
@@ -1744,6 +1747,9 @@ width: 60%;
   }
   .feed .section__title {
     padding: 28px 0 20px 0;
+  }
+  .carousel__item {
+    cursor: pointer;
   }
 }
 
@@ -1955,6 +1961,7 @@ width: 60%;
   }
   .testimonials::after {
     background: bottom 32% right -195% / 82% no-repeat url(../../assets/images/leav_foto.png);
+    z-index: -1;
   }
   .testimonials .button {
     max-width: 240px;
@@ -2052,8 +2059,7 @@ width: 60%;
   }
 }
 
-@media screen and (max-width: 638.98px){
-
+@media screen and (max-width: 638.98px) {
 }
 
 @media screen and (max-width: 580.98px) {
