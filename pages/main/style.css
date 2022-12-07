@@ -847,7 +847,7 @@ height: 52px; */
   margin: 15px;
   z-index: 25;
   top: 21%;
-  right: 23%;
+  right: calc(50% - 170px);
 }
 
 .popup__item {
@@ -1230,7 +1230,10 @@ input[type="range"].carousel__navigation:active::-ms-track {
   }
 }
 
-@media screen and (max-width: 1250.98px) {
+@media screen and (max-width: 1219.98px) {
+  .carousel__item {
+    width: 30%;
+}
 }
 
 @media screen and (max-width: 1000.98px) {
@@ -1432,6 +1435,78 @@ width: 60%;
     padding-left: 48px;
   }
 }
+
+@media screen and (max-width: 999.98px)
+{
+  .testimonials {
+    padding-top: 60px;
+    text-align: center;
+    padding-bottom: 80px;
+  }
+  .testimonials__inner {
+    margin-bottom: 30px;
+  }
+  .testimonials::after {
+    background: bottom 32% right -195% / 82% no-repeat url(../../assets/images/leav_foto.png);
+    z-index: -1;
+  }
+  .testimonials .button {
+    max-width: 240px;
+  }
+  .testimonials__carousel {
+    padding: 30px 0 0;
+  }
+
+  .carousel__container {
+    margin-bottom: 6px;
+    flex-direction: column;
+    height: 360px;
+    gap: 14px;
+    justify-content: flex-start;
+  }
+  .carousel__item {
+    /* width: 293px; */
+    width: 100%;
+    cursor: pointer;
+    height: 109px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    flex-grow: 0;
+  }
+  .item__header {
+    padding: 15px 12px 0 12px;
+  }
+  .item__content {
+    padding-left: 15px;
+    max-height: 37px;
+    overflow: hidden;
+  }
+
+  .carousel__navigation {
+    display: none;
+  }
+  input[type="range"].carousel__navigation {
+    width: 420px;
+  }
+
+  /*webkit*/
+  input[type="range"].carousel__navigation::-webkit-slider-thumb {
+    width: 75px;
+  }
+
+  /*mozilla*/
+  input[type="range"].carousel__navigation::-moz-range-thumb {
+    width: max(calc(75px - 1px - 1px), 0px);
+  }
+
+  /*ms*/
+  input[type="range"].carousel__navigation::-ms-thumb {
+    width: 75px;
+  }
+
+}
+
 @media screen and (max-width: 940px) {
   .main {
     margin-top: 0;

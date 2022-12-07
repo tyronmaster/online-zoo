@@ -16,7 +16,7 @@ export default class Carousel{
         this.options = {
             "position": 0,
             "elements_count": this.elements.items.length,
-            "elements_show": this.elements.container.offsetWidth < 892 ? 4 : 6,
+            "elements_show": this.elements.container.offsetWidth < 1220 ? 3 : 4,
         };
 
         this.preferences = {
