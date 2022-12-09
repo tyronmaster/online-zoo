@@ -447,7 +447,7 @@ height: 52px; */
   flex-wrap: wrap;
   row-gap: 20px;
   column-gap: 30px;
-  transition: opacity .5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .slider__item {
   width: 366px;
@@ -459,7 +459,7 @@ height: 52px; */
   overflow: hidden;
   transition: order 0.5s;
   will-change: order;
-  transition: opacity .5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .slider__picture {
   width: 366px;
@@ -686,6 +686,7 @@ height: 52px; */
   padding-bottom: 180px;
   position: relative;
   overflow: hidden;
+  /* z-index: 35; */
 }
 .testimonials::after {
   content: "";
@@ -817,7 +818,14 @@ height: 52px; */
 
 .popup {
   display: none;
-  /* position: relative; */
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(200, 200, 200, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 22;
   cursor: pointer;
 }
 
@@ -1019,6 +1027,8 @@ input[type="range"].carousel__navigation:active::-ms-track {
 .footer {
   background: #111115;
   padding: 40px 0 42px 0;
+  position: relative;
+  z-index: 10;
 }
 .footer__wrapper {
   display: flex;
@@ -1233,7 +1243,7 @@ input[type="range"].carousel__navigation:active::-ms-track {
 @media screen and (max-width: 1219.98px) {
   .carousel__item {
     width: 30%;
-}
+  }
 }
 
 @media screen and (max-width: 1000.98px) {
@@ -1436,8 +1446,7 @@ width: 60%;
   }
 }
 
-@media screen and (max-width: 999.98px)
-{
+@media screen and (max-width: 999.98px) {
   .testimonials {
     padding-top: 60px;
     text-align: center;
@@ -1504,7 +1513,6 @@ width: 60%;
   input[type="range"].carousel__navigation::-ms-thumb {
     width: 75px;
   }
-
 }
 
 @media screen and (max-width: 940px) {
@@ -1616,7 +1624,8 @@ width: 60%;
   .header .menu__list,
   .header .copyright__item {
     transform: translateX(-200px);
-    transition: 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    display: none;
   }
   /*active header inner section*/
   /* .header__inner.active {
@@ -1664,7 +1673,8 @@ width: 60%;
   .header__inner.active .menu__list,
   .header__inner.active .copyright__item {
     transform: translateX(0);
-    transition: 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    display: block;
   }
   .header__inner.active .logo__text {
     font-weight: 400;
