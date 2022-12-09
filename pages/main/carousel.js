@@ -1,17 +1,17 @@
-export default class Carousel{
+export default class Carousel {
     constructor(settings) {
         this.settings = settings;
         this.elements = {
-        "container": document.querySelector(this.settings.container),
-        "items": document.querySelector(this.settings.container).children,
-        "prev": document.querySelector(this.settings.prev),
-        "next": document.querySelector(this.settings.next),
-        "range": document.querySelector(this.settings.range),
+            "container": document.querySelector(this.settings.container),
+            "items": document.querySelector(this.settings.container).children,
+            "prev": document.querySelector(this.settings.prev),
+            "next": document.querySelector(this.settings.next),
+            "range": document.querySelector(this.settings.range),
         };
     }
 
 
-    init(){
+    init() {
 
         this.options = {
             "position": 0,
@@ -24,29 +24,29 @@ export default class Carousel{
 
         }
 
-        if(!this.elements.range){
-            this.elements.prev.addEventListener("click", () => {this.prevSlide()});
-            this.elements.next.addEventListener("click", () => {this.nextSlide()});
+        if (!this.elements.range) {
+            this.elements.prev.addEventListener("click", () => { this.prevSlide() });
+            this.elements.next.addEventListener("click", () => { this.nextSlide() });
         }
 
-        if(this.elements.range){
+        if (this.elements.range) {
             this.elements.range.max = this.elements.items.length;
-            this.elements.range.addEventListener("input", () => {this.rangeSlider()});
+            this.elements.range.addEventListener("input", () => { this.rangeSlider() });
         }
 
         // randomize items drawing
         let randomizedArray = this.CreateShuffledList(this.options.elements_count);
-        for(let i = 0; i < this.options.elements_count; i++){
+        for (let i = 0; i < this.options.elements_count; i++) {
             this.elements.items[i].style["order"] = randomizedArray[i];
         }
     }
 
-    rangeSlider(){
+    rangeSlider() {
 
-        let value =  this.elements.range.value;
+        let value = this.elements.range.value;
         let containerWidth = this.elements.container.offsetWidth;
         let itemWidth = this.elements.items[0].offsetWidth;
-        let itemsAmount =  Math.floor(containerWidth / itemWidth);
+        let itemsAmount = Math.floor(containerWidth / itemWidth);
         let sliderStep = itemWidth + (containerWidth - itemWidth * itemsAmount) / (itemsAmount - 1);
         let gap = (containerWidth - itemWidth * itemsAmount) / (itemsAmount - 1);
 
@@ -57,8 +57,8 @@ export default class Carousel{
 
 
 
-        if(value <= maxValue){
-            this.elements.container.style["transform"] = `translateX(${-((value - 1)*sliderStep)}px)`;
+        if (value <= maxValue) {
+            this.elements.container.style["transform"] = `translateX(${-((value - 1) * sliderStep)}px)`;
         }
 
 
@@ -69,45 +69,45 @@ export default class Carousel{
 
     nextSlide() {
         let randomizedArray = this.CreateShuffledList(this.options.elements_count);
-        for(let i = 0; i < this.options.elements_count; i++){
+        for (let i = 0; i < this.options.elements_count; i++) {
             this.elements.items[i].style["opacity"] = 0.2;
             this.elements.items[i].style["order"] = randomizedArray[i];
             setTimeout(() => {
-            this.elements.items[i].style["opacity"] = 1;
-        },500);
+                this.elements.items[i].style["opacity"] = 1;
+            }, 500);
         }
     }
 
     prevSlide() {
         let randomizedArray = this.CreateShuffledList(this.options.elements_count);
-        for(let i = 0; i < this.options.elements_count; i++){
+        for (let i = 0; i < this.options.elements_count; i++) {
             this.elements.items[i].style["opacity"] = 0.2;
             this.elements.items[i].style["order"] = randomizedArray[i];
             setTimeout(() => {
-            this.elements.items[i].style["opacity"] = 1;
-        },500);
+                this.elements.items[i].style["opacity"] = 1;
+            }, 500);
         }
     }
 
 
 
-// create random list
-CreateShuffledList(itemsCount) {
-    let randomArray = [];
-    for (let i = 0; i < itemsCount; i++) {
-        randomArray.push(i);
+    // create random list
+    CreateShuffledList(itemsCount) {
+        let randomArray = [];
+        for (let i = 0; i < itemsCount; i++) {
+            randomArray.push(i);
+        }
+        this.FisherYets(randomArray);
+        return randomArray;
     }
-    this.FisherYets(randomArray);
-    return randomArray;
-}
 
-// fisher-yets algorithm to shuffle array
-FisherYets(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let t = array[i];
-        array[i] = array[j];
-        array[j] = t;
+    // fisher-yets algorithm to shuffle array
+    FisherYets(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let t = array[i];
+            array[i] = array[j];
+            array[j] = t;
+        }
     }
-}
 }
