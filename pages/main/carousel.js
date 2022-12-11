@@ -69,24 +69,19 @@ export default class Carousel {
 
     nextSlide() {
         let randomizedArray = this.CreateShuffledList(this.options.elements_count);
-        for (let i = 0; i < this.options.elements_count; i++) {
-            this.elements.items[i].style["opacity"] = 0.2;
-            this.elements.items[i].style["order"] = randomizedArray[i];
-            setTimeout(() => {
+        this.elements.container.style["opacity"] = 0;
+        setTimeout(() => {
+            for (let i = 0; i < this.options.elements_count; i++) {
+                this.elements.items[i].style["opacity"] = 0;
+                this.elements.items[i].style["order"] = randomizedArray[i];
                 this.elements.items[i].style["opacity"] = 1;
-            }, 500);
-        }
+            }
+            this.elements.container.style["opacity"] = 1;
+        }, 500);
     }
 
     prevSlide() {
-        let randomizedArray = this.CreateShuffledList(this.options.elements_count);
-        for (let i = 0; i < this.options.elements_count; i++) {
-            this.elements.items[i].style["opacity"] = 0.2;
-            this.elements.items[i].style["order"] = randomizedArray[i];
-            setTimeout(() => {
-                this.elements.items[i].style["opacity"] = 1;
-            }, 500);
-        }
+        this.nextSlide();
     }
 
 

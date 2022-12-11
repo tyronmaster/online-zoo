@@ -728,7 +728,7 @@ height: 52px; */
   width: 100%;
   margin-bottom: 10px;
   transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   padding: 4px;
 }
 .carousel__item {
