@@ -449,6 +449,20 @@ height: 52px; */
   column-gap: 30px;
   transition: opacity 0.5s ease-in-out;
 }
+.slider__track.active{
+  animation-duration: .5s;
+  animation-name: fadeInWhite;
+  /* animation-iteration-count: 2; */
+}
+@keyframes fadeInWhite {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 .slider__item {
   width: 366px;
   height: 426px;
@@ -457,8 +471,8 @@ height: 52px; */
   text-align: left;
   cursor: pointer;
   overflow: hidden;
-  transition: order 0.5s;
-  will-change: order;
+  /* transition: order 0.5s;
+  will-change: order; */
   transition: opacity 0.5s ease-in-out;
 }
 .slider__picture {
@@ -728,7 +742,7 @@ height: 52px; */
   width: 100%;
   margin-bottom: 10px;
   transform: translateX(0);
-  transition: 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   padding: 4px;
 }
 .carousel__item {
