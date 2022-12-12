@@ -1,5 +1,4 @@
 import Carousel from "./carousel.js";
-// import {burger} from "./burger.js"
 
 let slider = new Carousel({
         "container": ".slider__track",
@@ -27,24 +26,16 @@ const popup = document.querySelector(".popup");
 const closeButton = document.querySelector(".cross");
 const body = document.querySelector("body");
 
-
-// console.log(popupItems);
-
 popupItems.forEach( (item) => item.addEventListener("click", (e) => {
 
     const testimonialsNode = document.createElement("div");
     testimonialsNode.classList.add("popup__item");
     testimonialsNode.innerHTML = e.currentTarget.innerHTML;
 
-
-    // console.log(document.documentElement.offsetWidth);
-    // if(e.currentTarget.offsetWidth <= 600){
     if(document.documentElement.offsetWidth <= 640){
         popup.classList.toggle("active");
         popup.append(testimonialsNode);
         body.classList.add("lock");
-        // e.currentTarget.classList.toggle("active");
-        // testimonialsSection.classList.toggle("active");
     }
 }));
 
