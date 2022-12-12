@@ -449,8 +449,8 @@ height: 52px; */
   column-gap: 30px;
   transition: opacity 0.5s ease-in-out;
 }
-.slider__track.active{
-  animation-duration: .5s;
+.slider__track.active {
+  animation-duration: 0.5s;
   animation-name: fadeInWhite;
   /* animation-iteration-count: 2; */
 }
@@ -742,7 +742,7 @@ height: 52px; */
   width: 100%;
   margin-bottom: 10px;
   transform: translateX(0);
-  transition: opacity 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   padding: 4px;
 }
 .carousel__item {
